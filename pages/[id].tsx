@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import Head from "next/head";
 import { getDatabase, getPage, getBlocks } from "../lib/notion";
 import Link from "next/link";
-import { databaseId } from "./index.js";
+import { databaseId } from "./index.tsx";
 import styles from "./post.module.css";
 
 export const Text = ({ text }) => {
