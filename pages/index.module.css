@@ -1,6 +1,6 @@
-.container {
+.main_container {
   padding: 0 20px;
-  max-width: 700px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -17,6 +17,41 @@
 .header p {
   opacity: 0.7;
   line-height: 1.5;
+}
+
+.main_section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.content {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.sidebar {
+  flex-basis: 300px;
+}
+
+.categoryList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.categoryList li {
+  margin-bottom: 10px;
+}
+
+.categoryList li a {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.categoryList li a:hover {
+  /* background-color: #444; */
 }
 
 .plus {
