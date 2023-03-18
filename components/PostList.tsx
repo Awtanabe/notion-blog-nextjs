@@ -1,17 +1,11 @@
 import Head from "next/head";
 import Link from "next/link";
-import { getDatabase } from "../lib/notion";
 import { Text } from "./Post";
 import styles from "../pages/index.module.css";
 
 export default function PostList({ posts }) {
   return (
     <div>
-      <Head>
-        <title>Notion Next.js blog</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main className={styles.main_container}>
         <header className={styles.header}>
           <div className={styles.logos}>
