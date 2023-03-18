@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { getDatabase } from "../lib/notion";
+import { getPosts } from "../lib/notion";
 import PostList from '../components/PostList';
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
@@ -17,7 +17,7 @@ export default function PostListPage({posts}) {
 }
 
 export const getStaticProps = async () => {
-  const database = await getDatabase(databaseId);
+  const database = await getPosts(databaseId);
 
   return {
     props: {

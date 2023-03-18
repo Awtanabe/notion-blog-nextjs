@@ -1,5 +1,5 @@
 import Post from '../../components/Post';
-import { getDatabase, getPage, getBlocks } from "../../lib/notion";
+import { getPosts, getPage, getBlocks } from "../../lib/notion";
 import { databaseId } from "../index";
 
 export default function PostPage({page, blocks}) {
@@ -11,7 +11,7 @@ export default function PostPage({page, blocks}) {
 }
 
 export const getStaticPaths = async () => {
-  const database = await getDatabase(databaseId);
+  const database = await getPosts(databaseId);
   return {
     paths: database.map((page) => ({ params: { id: page.id } })),
     fallback: true,
