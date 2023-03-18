@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { Text } from "./Post";
+import { Text } from "./Text";
 import styles from "../pages/index.module.css";
 
 export default function PostList({ posts }) {
