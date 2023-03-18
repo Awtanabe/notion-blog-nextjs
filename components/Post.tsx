@@ -2,34 +2,9 @@ import { Fragment } from "react";
 import Head from "next/head";
 import { getDatabase, getPage, getBlocks } from "../lib/notion";
 import Link from "next/link";
-import { databaseId } from "./index";
-import styles from "./post.module.css";
-
-export const Text = ({ text }) => {
-  if (!text) {
-    return null;
-  }
-  return text.map((value) => {
-    const {
-      annotations: { bold, code, color, italic, strikethrough, underline },
-      text,
-    } = value;
-    return (
-      <span
-        className={[
-          bold ? styles.bold : "",
-          code ? styles.code : "",
-          italic ? styles.italic : "",
-          strikethrough ? styles.strikethrough : "",
-          underline ? styles.underline : "",
-        ].join(" ")}
-        style={color !== "default" ? { color } : {}}
-      >
-        {text.link ? <a href={text.link.url}>{text.content}</a> : text.content}
-      </span>
-    );
-  });
-};
+import { databaseId } from "../pages/index";
+import styles from "../pages/post.module.css";
+import { Text } from './Text';
 
 const renderNestedList = (block) => {
   const { type } = block;
