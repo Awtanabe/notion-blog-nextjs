@@ -50,10 +50,24 @@ export default function PostList({ posts }) {
             <h3>Categories</h3>
             <ul className={styles.categoryList}>
               <li>
-                <Link href="/category1">Category 1</Link>
+              <Link
+                href={{
+                  pathname: '/categoried_post',
+                  query: { q: 'プログラミング' }
+                }}
+              >
+                プログラミング
+              </Link>
               </li>
               <li>
-                <Link href="/category2">Category 2</Link>
+              <Link
+                href={{
+                  pathname: '/categoried_post',
+                  query: { q: 'お金' }
+                }}
+              >
+                お金
+              </Link>
               </li>
             </ul>
           </div>
