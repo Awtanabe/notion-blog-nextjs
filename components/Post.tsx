@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import Head from "next/head";
-import { getDatabase, getPage, getBlocks } from "../lib/notion";
+import { getPosts, getPage, getBlocks } from "../lib/notion";
 import Link from "next/link";
 import { databaseId } from "../pages/index";
 import styles from "../pages/post.module.css";
@@ -160,9 +160,9 @@ export default function Post({ page, blocks }) {
 }
 
 export const getStaticPaths = async () => {
-  const database = await getDatabase(databaseId);
+  const posts = await getPosts(databaseId);
   return {
-    paths: database.map((page) => ({ params: { id: page.id } })),
+    paths: posts.map((page) => ({ params: { id: page.id } })),
     fallback: true,
   };
 };
