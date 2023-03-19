@@ -11,7 +11,9 @@ export default function PostList({ posts }) {
           <div className={styles.logos}>
             {/* ロゴ作成したらここに */}
           </div>
-          <h1>Aki エンジニア日記</h1>
+          <Link href="/">
+            <h1>Aki エンジニア日記</h1>
+          </Link>          
           <p>
             営業から、プログラミングスクールを経て、事業会社2社を2年半間経験後、フリーランスとして1年経験
             現在は、ベンチャー企業でPMと開発をやっています。
@@ -34,7 +36,7 @@ export default function PostList({ posts }) {
                 return (
                   <li key={post.id} className={styles.post}>
                     <h3 className={styles.postTitle}>
-                      <Link href={`/${post.id}`}>
+                      <Link href={`/post/${post.id}`}>
                         <Text text={post.properties.Name.title} />
                       </Link>
                     </h3>
